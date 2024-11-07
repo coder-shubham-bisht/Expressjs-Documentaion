@@ -1,15 +1,18 @@
-# Expressjs-Documentaion
+# Express.js-Documentaion
+<img src="./images/express-node.png"/>
 
-## What is Express.JS?
+## What is <a href="https://expressjs.com/">Express.JS </a>
 
 **Express.js** ek web framework hai jo Node.js ka use krke bnaya gya hai.   
 Yeh hume web applications banane mein madad karta hai.  
-Iske features like routing, middleware, and template engine integration hmare code ko simple and organized bnay rkthe hai.
+Iske features like routing, middleware,static file serving and template engine integration hmare code ko simple and organized bnay rkthe hai.
 
-### **Web Application Kya Hai?**
+### **Web Application Kya Hai?** 
+
 A **web application** ek aisi software application hai jo web browser ke through use ki ja sakti hai. Iska matlab hai ki aapko is application ko use karne ke liye apne computer pe koi special software install karne ki zarurat nahi hoti, bas internet aur web browser (jaise Chrome, Firefox) hona chahiye.
 
 ### **Kaise Kaam Karti Hai Web Application?**
+
 1. **Client-Side**: Yeh wo part hota hai jo user ke browser mein run hota hai. Isme HTML, CSS, aur JavaScript ka use hota hai taaki aapko ek interactive aur user-friendly interface mil sake.
    - **Example**: Jab aap Google Docs use karte hain, to uska interface aapke browser mein load hota hai.
    
@@ -22,11 +25,11 @@ Ek framework predefined tools aur guidelines ka set hota hai jo development proc
 
 <b>Web App Framework </b>- framework jo web applications develop karne ke liye tools aur guidelines provide karta hai.
 
-## Node.Js
+##  <a href="https://nodejs.org/en">Node.Js</a>
 
 Runtime environment hai jo JavaScript ko server-side pe run karne ke liye use hota hai.
 
-<b>Runntime</b>- Runtime woh time period hota hai jab aapka program actually execute ho raha hota hai.
+<b>Runtime</b>- Runtime woh time period hota hai jab aapka program actually execute ho raha hota hai.
 
 <b>Enviroment</b>- Surrounding or condition for something to exist or happen.
 
@@ -38,9 +41,14 @@ Because of nodejs we can create server side applications wriiten in javascript.
 
 Let’s compare Node.js and Express.js code examples.
 
-### **1. Simplified Routing**
+### **1. Routing**
 
-#### **Node.js Only:**
+Routing ka matlab hai ki application kaise respond karti hai user ki specific URL requests par. Yeh define karta hai ki jab user kisi particular URL ko access karega, toh application kya action legi.
+
+#### **Node.js:**
+
+Node.js mein routing ko manually handle karna padta hai jo kaafi complex ho sakta hai.
+
 ```javascript
 const http = require('http');
 
@@ -63,6 +71,9 @@ server.listen(3000, () => {
 ```
 
 #### **Express.js:**
+
+Express.js routing ko bahut simple aur readable banata hai.
+
 ```javascript
 const express = require('express');
 const app = express();
@@ -84,9 +95,14 @@ app.listen(3000, () => {
 });
 ```
 
-### **2. Middleware Support**
+### **2. Middleware function Support**
+Middleware funciton is a function that is executed after the request has been sent to the server but before any response given back by the server.
+So it basically sits at middle of request and response cycle.
 
-#### **Node.js Only:**
+#### **Node.js**
+
+In pure Node.js, middleware isn't a built-in feature, but you can create middleware-like functions manually.
+
 ```javascript
 const http = require('http');
 
@@ -108,13 +124,44 @@ server.listen(3000, () => {
 });
 ```
 
+
+#### **Express.js:**
+
+Express has a built-in mechanism for defining and using middleware functions through methods like app.use()
+
+```javascript
+const express = require('express');
+const app = express();
+
+// Middleware to log the request method and URL
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.use((req, res) => {
+  res.status(404).send('Not Found');
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+```
+
+
 ### **3. Static File Serving**
 
+Static file serving ka matlab hai  files ko serve karna jaise HTML, CSS, JavaScript, aur images without making any changes in the files.
 
-**Node.js** without any additional frameworks requires more manual setup to serve static files.
-#### **Example: Node.js Only**
 
-2. **Server Setup (server.js)**:
+#### **Node.js**
+
+Node.js requires more manual setup to serve static files.
+
    ```javascript
    const http = require('http');
    const fs = require('fs');
@@ -166,10 +213,10 @@ server.listen(3000, () => {
    });
    ```
 
+#### **Express.js**
 
-**Express.js** provides a built-in middleware function to serve static files, which simplifies the process.
+**Express.js** makes it simple to serve static files.
 
-#### **Example: Express.js**
    ```javascript
    const express = require('express');
    const path = require('path');
@@ -189,83 +236,72 @@ server.listen(3000, () => {
    });
    ```
 
-#### **Express.js:**
-```javascript
-const express = require('express');
-const app = express();
-
-// Middleware to log the request method and URL
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.url}`);
-  next();
-});
-
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
-
-app.use((req, res) => {
-  res.status(404).send('Not Found');
-});
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
-```
-
-
 ### **4. Template Engines**
 
-#### **Node.js Only:**
-```javascript
-const http = require('http');
-const fs = require('fs');
+Templating engines wo tools hote hain jo hume templating krne me help krte hai.
 
-const server = http.createServer((req, res) => {
-  if (req.method === 'GET' && req.url === '/') {
-    fs.readFile('index.html', (err, data) => {
-      if (err) {
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end('Internal Server Error');
-      } else {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(data);
-      }
-    });
-  } else {
-    res.writeHead(404, { 'Content-Type': 'text/plain' });
-    res.end('Not Found');
-  }
-});
+### **Templating Kya Hai**
 
-server.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
-```
+**Templating** ka matlab hota hai ek aise mechanism ka use karna jo HTML code ko dynamic data ke sath generate kar sake. Yeh web development mein common hai, jahan static HTML pages ke bajaye dynamic content generate kiya jata hai based on user inputs ya server-side data.
 
-#### **Express.js:**
-```javascript
-const express = require('express');
-const app = express();
+#### **Node.js**
+**Node.js** templating engines ko use karna kaafi complex bana deta hai.
 
-// Set the template engine to Pug
-app.set('view engine', 'pug');
+   ```javascript
+   const http = require('http');
+   const fs = require('fs');
+   const path = require('path');
+   const pug = require('pug');
 
-app.get('/', (req, res) => {
-  res.render('index', { title: 'Hello', message: 'Hello, World!' });
-});
+   const server = http.createServer((req, res) => {
+     if (req.method === 'GET' && req.url === '/') {
+       fs.readFile(path.join(__dirname, 'views', 'index.pug'), 'utf8', (err, data) => {
+         if (err) {
+           res.writeHead(500, { 'Content-Type': 'text/plain' });
+           res.end('Internal Server Error');
+           return;
+         }
+         const compiledFunction = pug.compile(data);
+         const html = compiledFunction({ title: 'Welcome', message: 'Hello, World!' });
+         res.writeHead(200, { 'Content-Type': 'text/html' });
+         res.end(html);
+       });
+     } else {
+       res.writeHead(404, { 'Content-Type': 'text/plain' });
+       res.end('Not Found');
+     }
+   });
 
-app.use((req, res) => {
-  res.status(404).send('Not Found');
-});
+   server.listen(3000, () => {
+     console.log('Server running on port 3000');
+   });
+   ```
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
-```
+### **Express.js**
 
-### **Summary**
-Express.js significantly simplifies web development tasks like routing, middleware integration, code organization, and rendering templates, compared to plain Node.js. It allows for cleaner, more modular, and maintainable code.
+**Express.js** templating engines ko use karna kaafi asaan bana deta hai compared to plain **Node.js**
+
+   ```javascript
+   const express = require('express');
+   const path = require('path');
+   const app = express();
+
+   // Set the template engine to Pug
+   app.set('view engine', 'pug');
+   app.set('views', path.join(__dirname, 'views'));
+
+   app.get('/', (req, res) => {
+     res.render('index', { title: 'Welcome', message: 'Hello, World!' });
+   });
+
+   app.listen(3000, () => {
+     console.log('Server is running on port 3000');
+   });
+   ```
+
+
+## **Summary**
+Express.js significantly simplifies web application development tasks like routing, middleware integration,static files serving, and rendering templates, compared to plain Node.js. It allows for cleaner, more modular, and maintainable code.
 
 
 
