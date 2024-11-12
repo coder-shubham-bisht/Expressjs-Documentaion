@@ -8,8 +8,6 @@
 Yeh hume web applications banane mein madad karta hai.
 
 ## Framework kya hai
- <img src="./images/Framewrok.webp" height="300"/>
-
 
 Framework ek aisa soch smjhkar bnaya hua physical structure ya fr socha-samjha bnaya hua plan hota hai jo hume kisi kaam ko karne mein support deta hai aur us kaam ko asaan aur sahi tareeke se karne mein madad karta hai.
 
