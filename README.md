@@ -56,6 +56,8 @@ Jab user kisi web application(browser) pe koi action perform karta hai, jaise ki
 **Static Website :**
 Static website wo hoti hai jisme content (matlab text aur images) fix hota hai aur sab users ko same dikhta hai. Isme kuch change ya update nahi hota jab tak manually edit na kiya jaye
 
+**Dynamic Website :** Ye wo webiste hoti jisme content fix nahi hota and aur har user ke lia content different dikhai deta hai.
+
 **Database :**
 Database ek jagah hai jahan data ya information store ki jaati hai, jaise naam, email, ya order details. Yeh data ko sambhalne aur jaldi se dhoondhne mein madad karta hai.
 .
