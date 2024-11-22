@@ -9,7 +9,7 @@ Yeh hume web applications banane mein madad karta hai.
 
 ## Framework kya hai
 
-**Framework** ek pehle se bnaya hua structure set hota hai jo **reusable components**, **tools**, aur **guidelines** deta hai. Iska kaam development process ko aasaan karna hota hai.
+**Framework** ek pehle se bnaya hua structure set hota hai jisme **reusable components**, **tools**, aur **guidelines** hote hai. Iska kaam development process ko aasaan karna hota hai.
 
  **Chaliye ek ghar banane ka example lekar framework ka concept samajhte hain:**
 
@@ -38,25 +38,27 @@ Ab sochiye aapke paas ek **house-building framework** hai, jisme kuch cheezein p
 ---
 
 
-
 ## Web Framework kya hai
 
 Ek framework jo web application bnane jese kaam ko simplify kr  deta hai and web application bnana asan bna deta hai.
 
 ## **Web Application Kya Hai** 
 
-Ek aisi software application server pe run krti hai lekin hum usey access and use krte hai through a browser.    
+Ek aisi software application server pe run krti hai lekin hum usey access and use krte hai through a browser.    4
+
 Iska matlab hai ki aapko is application ko use karne ke liye apne computer pe koi special software install karne ki zarurat nahi hoti, bas internet aur web browser (jaise Chrome, Firefox) hona chahiye.
 
-Web applications static websites se different hoti hain kyunki ye interactive and dynamic hoti hain, ye database aur server ke sath connect hoti hain.  
-Jab user kisi web application(browser) pe koi action perform karta hai, jaise ki button click karna ya form submit karna, toh wo server pe data send karta hai aur uske response me application data 
- ko database me save krti hai then application updated data ke sath browser me webpage  show karti hai.
+Web applications static websites se different hoti hain kyunki ye interactive and dynamic hoti hain aur ye database aur server ke sath connect hoti hain.
+Web application user ko content create ,edit and delete krna ki functionality provide karati hai jabki static and dynamic webisite user of sirf read krne ki functionality provide karati hai.
+Jab user kisi web application(browser) pe koi action perform karta hai, jaise ki button click karna ya form submit 
 
 
 **Static Website :**
-Static website wo hoti hai jisme content (matlab text aur images) fix hota hai aur sab users ko same dikhta hai. Isme kuch change ya update nahi hota jab tak manually edit na kiya jaye
+Static website wo hoti hai jisme server webpages ko vse hi server krta hai jse vo server pr store hote hai, isse website ka content hmesha fix rhta hai.
+Example --> Landing Page, Blog reading Website,Documentation website.
 
-**Dynamic Website :** Ye wo webiste hoti jisme content fix nahi hota and aur har user ke lia content different dikhai deta hai.
+**Dynamic Website :** Ye wo webiste hoti jisme server  webpage ko khudse created krta hai har for every request that comes to the server using UI templates  and fr vo us naye created webpage ko client computer ko send krta hai, isse website ka content kabhi fix nhi hota.
+Example --> News Webisite,
 
 **Database :**
 Database ek jagah hai jahan data ya information store ki jaati hai, jaise naam, email, ya order details. Yeh data ko sambhalne aur jaldi se dhoondhne mein madad karta hai.
