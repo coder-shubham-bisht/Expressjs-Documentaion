@@ -52,7 +52,6 @@ Iska matlab hai ki aapko is application ko use karne ke liye apne computer pe ko
 
 Web applications static websites se different hoti hain kyunki ye interactive and dynamic hoti hain aur ye database aur server ke sath connect hoti hain.  
 Web application user ko content create,read ,edit and delete krna ki functionality provide karati hai jabki static and dynamic webisite user of sirf read krne ki functionality provide karati hai.  
-Jab user kisi web application(browser) pe koi action perform karta hai, jaise ki button click karna ya form submit 
 
 
 **Static Website :**
